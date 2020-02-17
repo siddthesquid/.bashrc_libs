@@ -55,12 +55,11 @@ ps1_get_format_code(){
 }
 
 ps1_encode_style(){
-	style_code="\e[0"
+	style_code="\033[0"
 	for format in $@; do
 		style_code="$style_code;$(ps1_get_format_code $format)"
 	done
-	echo -e "${style_code}m"
-	# echo -e "\[${style_code}m\]"
+	echo -e "\001${style_code}m\002"
 }
 
 ps1_reset_style(){
