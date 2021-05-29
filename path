@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+# Set the $1 environment variable to $2 and add $2 to path
+# e.g. add_path SPARK_HOME /opt/spark
+add_path(){
+    if [[ ! -z $1 && ! -z $2 && -d $2/bin ]]; then
+        eval $1=$2
+        export PATH="$PATH:$2/bin"
+    fi
+}
+
+# User specific environment
+add_path LOCAL_HOME "$HOME/.local"
+add_path JAVA_HOME "/usr/lib/jvm/java"
+add_path SCALA_HOME "/opt/scala"
+add_path SPARK_HOME "/opt/spark"
+add_path GO_HOME "$HOME/go"
+add_path SNAP_HOME "/snap"
+add_path MAVEN_HOME "/opt/maven"
+add_path IDEA_HOME "/opt/idea"
