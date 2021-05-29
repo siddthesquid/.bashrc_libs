@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+alias src=". ~/.bashrc"
+alias bashrc="vim ~/.bashrc"
+
+alias ls="ls -lh"
