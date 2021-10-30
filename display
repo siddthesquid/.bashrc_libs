@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+set -o vi
+alias ls="ls -lhF --color"
+export LS_COLORS='di=1;31:fi=36:ln=4;31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35;47:*.rpm=90'

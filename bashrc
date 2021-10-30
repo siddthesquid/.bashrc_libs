@@ -6,5 +6,7 @@
 . ~/.bashrc_libs/tmux
 . ~/.bashrc_libs/utils
 . ~/.bashrc_libs/path
+. ~/.bashrc_libs/display
+. ~/.bashrc_libs/autocomplete
 
 tm

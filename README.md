@@ -33,6 +33,7 @@ This assumes a CentOS 8 minimal installation.
 - [AWS](#aws)
 - [Terraform](#terraform)
 - [Kubernetes](#kubernetes)
+- [Helm](#helm)
 - [Tensorflow](#tensorflow)
 
 # Initial setup
@@ -300,6 +301,11 @@ sudo dnf -y install kubectl
 kind
 ```sh
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.11.1
+```
+
+# Helm
+```sh
+sudo snap install helm --classic
 ```
 
 # Tensorflow

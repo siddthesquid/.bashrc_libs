@@ -4,3 +4,5 @@ alias src=". ~/.bashrc"
 alias bashrc="vim ~/.bashrc"
 
 alias ls="ls -lh"
+
+alias k="kubectl"
