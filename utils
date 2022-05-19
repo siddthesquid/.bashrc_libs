@@ -1,8 +1,10 @@
-#!/usr/bin/bash
+#!/usr/bin/zsh
 
-alias src=". ~/.bashrc"
+alias src=". ~/.zshrc"
 alias bashrc="vim ~/.bashrc"
+alias zshrc="vim ~/.zshrc"
 
-alias ls="ls -lh"
+# alias ls="ls -lh"
 
 alias k="kubectl"
+alias xsudo='sudo -E env "PATH=$PATH"'
