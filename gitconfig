@@ -1,0 +1,17 @@
+[user]
+	email = ssingal05@gmail.com
+	name = Sidd Singal
+[init]
+	defaultBranch = main
+[alias]
+	st = status -sbu
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	cm = commit -am
+	rv = remote -v
+	dv = difftool -t vimdiff -y
+	gl = config --global -l
+	se = !git rev-list --all | xargs git grep -F
+	c = checkout
+[help]
+	autocorrect = 20

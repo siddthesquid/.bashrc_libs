@@ -19,25 +19,42 @@ filetype plugin indent on    " required
 """""""""""""""""""""" BASIC SETTINGS """"""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-set tabstop=4
-set shiftwidth=4  "this is the level of autoindent, adjust to taste
+
+set nocompatible
+
+set tabstop=2
+set shiftwidth=2 
 set expandtab
-set autoindent 
+set autoindent smartindent
+set smarttab 
+set shiftround
+set backspace=indent,eol,start
+
+set scrolloff=5
+set mouse=a
+
+set textwidth=80
+set showmatch
+set nostartofline 
+
 set ruler
 set number
+
 set visualbell
-set backspace=indent,eol,start
-set encoding=utf-8
-" Uncomment below to make screen not flash on error
+set noerrorbells
 set vb t_vb=""
+
+set encoding=utf-8
 set t_Co=256
+set wrap
 colorscheme industry
+
 set showcmd
 set wildmenu
 set lazyredraw
-set showmatch
 set incsearch
 set hlsearch
+
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""

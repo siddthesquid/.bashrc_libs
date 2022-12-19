@@ -8,3 +8,71 @@ alias zshrc="vim ~/.zshrc"
 
 alias k="kubectl"
 alias xsudo='sudo -E env "PATH=$PATH"'
+
+
+# Python
+alias py="python3.10"
+
+# Toggle python virtualenv
+function pyv() {
+  if [ $# -eq 0 ]; then
+    VENV_DIR=.venv
+  else
+    VENV_DIR=$1
+  fi
+  if [ -z "$VIRTUAL_ENV" ]; then
+    # Only create new virtualenv if $VENV_DIR doesn't exist
+    if [ ! -d $VENV_DIR ]; then
+      python3.10 -m virtualenv $VENV_DIR
+    fi
+    source $VENV_DIR/bin/activate
+  else
+    deactivate
+    unset VIRTUAL_ENV
+  fi
+}
+
+# Find all folders and files in directory matching all patterns
+function find_all() {
+  # Construct find command from arguments
+  find_args="-name "
+  find . \( -name "$1" -type d -o -name "$1" -type f \) -prune
+  for i in "$@"; do
+    shift
+    find . \( -name "$1" -type d -o -name "$1" -type f \) -prune
+  done
+}
+
+# Detailed ls of files from stdin
+function ls_in() {
+  for file in $(cat); do
+    ls -ld $file
+  done
+}
+
+# Delete files and folders from stdin
+function del_in() {
+  for file in $(cat); do
+    rm -rf $file
+  done
+}
+
+# Untar file to /opt directory
+function optar() {
+  sudo tar -xvf $1 -C /opt
+}
+
+# cd into directory but create it if it doesn't exist
+function cdir() {
+  if [[ ! -d $1 ]]; then
+    mkdir -p $1
+  fi
+  cd $1
+}
+
+function xcdir() {
+  if [[ ! -d $1 ]]; then
+    sudo mkdir -p $1
+  fi
+  cd $1
+}
